@@ -8,15 +8,15 @@ pipeline{
         }
         stage("Build"){
             steps{
-                sh "docker build . -t django-application"
+                sh "docker build . -t django-notes-application"
             }
         }
         stage("Pushing to Docker Hub"){
             steps{
-                withCredentials([usernamePassword(credentialsId:"Docker-Hub-Credentials",passwordVariable: 'Saiharsha', usernameVariable: 'saimeghana27')]){
-                sh "docker tag django-application ${env.saimeghana27}/django-application:latest"
-                sh "docker login -u ${env.saimeghana27} -p ${env."Saiharsha"}"
-                sh "docker push ${env.dockersaimeghana27}/django-application:latest"
+                withCredentials([usernamePassword(credentialsId:"Docker-Hub-Credentials",passwordVariable: '123456789', usernameVariable: 'saimeghana2')]){
+                sh "docker tag django-notes-application ${env.saimeghana2}/django-notes-application:latest"
+                sh "docker login -u ${env.saimeghana2} -p ${env."123456789"}"
+                sh "docker push ${env.saimeghana2}/django-notes-application:latest"
                 }
             }
         }
