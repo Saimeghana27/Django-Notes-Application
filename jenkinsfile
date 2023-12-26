@@ -13,9 +13,9 @@ pipeline{
         }
         stage("Pushing to Docker Hub"){
             steps{
-                withCredentials([usernamePassword(credentialsId:"Docker-Hub-Credentials",passwordVariable: 'saiharsha5398', usernameVariable: 'dockersaimeghana')]){
-                sh "docker tag django-application ${env.dockersaimeghana27}/django-application:latest"
-                sh "docker login -u ${env.dockersaimeghana} -p ${env."saiharsha5398"}"
+                withCredentials([usernamePassword(credentialsId:"Docker-Hub-Credentials",passwordVariable: 'saiharsha5398', usernameVariable: 'saimeghana27')]){
+                sh "docker tag django-application ${env.saimeghana27}/django-application:latest"
+                sh "docker login -u ${env.saimeghana27} -p ${env."saiharsha5398"}"
                 sh "docker push ${env.dockersaimeghana27}/django-application:latest"
                 }
             }
