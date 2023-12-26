@@ -21,7 +21,7 @@ RUN /venv/bin/pip install -r requirements.txt
 COPY . /app/
 
 # Expose the port the Django app runs on
-EXPOSE 8000
+EXPOSE 9000
 
 # Define the command to run the Django development server
-CMD ["/venv/bin/python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["/venv/bin/python", "manage.py", "runserver", "0.0.0.0:9000"]
